@@ -30,7 +30,6 @@ pnpm install
 ### 微应用
 
 - `react-vanilla-app`: 基于React的微应用
-- `umi-app`: 基于Umi框架的微应用
 - `vue3-vite-app`: 基于Vue 3和Vite的微应用
 
 ### 工具和配置
