@@ -6,6 +6,8 @@ module.exports = {
     config.output.library = `${name}-[name]`;
     config.output.libraryTarget = "umd";
     config.output.chunkLoadingGlobal = `webpackJsonp_${name}`;
+    // 设置为相对路径
+    config.output.publicPath = '';
     return config;
   }
 };

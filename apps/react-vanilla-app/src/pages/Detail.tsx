@@ -1,7 +1,17 @@
-export default function() {
+import { getDomainFromUrl, removeDomainIfDev } from '../utils/urlUtils';
+
+const UrlProcessor = () => {
+  const url = 'https://www.example.com/api/to/page';
+  const domain = getDomainFromUrl(url);
+  const processedUrl = removeDomainIfDev(domain, url);
+
   return (
     <div>
-      详情页内容
+      <p>原始URL: {url}</p>
+      <p>协议和域名: {domain}</p>
+      <p>处理后的URL: {processedUrl}</p>
     </div>
-  )
-}
+  );
+};
+
+export default UrlProcessor;
