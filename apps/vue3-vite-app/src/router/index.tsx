@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/detail',
       name: 'Detail',
       component: import('../views/Detail.vue'),
+    },
+    {
+      path: '/editor',
+      name: 'Editor',
+      component: import('../views/Editor.vue'),
     }
   ],
 });

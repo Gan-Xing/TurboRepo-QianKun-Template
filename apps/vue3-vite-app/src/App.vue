@@ -9,6 +9,7 @@
     <div class="menu">
       <router-link to="/">list</router-link>
       <router-link to="/detail">detail</router-link>
+      <router-link to="/editor">editor</router-link>
     </div>
     <router-view></router-view>
   </div>
