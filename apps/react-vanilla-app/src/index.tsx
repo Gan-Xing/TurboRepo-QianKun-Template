@@ -34,7 +34,7 @@ export async function bootstrap() {
 // 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法
 export async function mount(props: any) {
 	console.log(props);
-	props.onGlobalStateChange((state, prev) => {
+	props.onGlobalStateChange((state: any, prev: any) => {
 		// state: 变更后的状态; prev 变更前的状态
 		console.log(state, prev);
 		// 将这个state存储到我们子应用store

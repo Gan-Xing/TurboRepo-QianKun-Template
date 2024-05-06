@@ -1,0 +1,24 @@
+{
+    "parser": "@typescript-eslint/parser", // 定义ESLint的解析器
+    "extends": [
+      "plugin:react/recommended", // 使用推荐的React规则
+      "plugin:@typescript-eslint/recommended" // 使用推荐的规则从@typescript-eslint
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020, // 允许解析现代ECMAScript特性
+      "sourceType": "module", // 允许使用模块
+      "ecmaFeatures": {
+        "jsx": true // 允许对JSX进行解析
+      }
+    },
+    "rules": {
+      // 在这里自定义规则
+      "react/react-in-jsx-scope": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect" // 自动检测React版本
+      }
+    }
+  }
+  

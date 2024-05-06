@@ -2,6 +2,7 @@ import './App.css';
 import { Link, Routes, Route } from 'react-router-dom'
 import List from './pages/List';
 import Detail from './pages/Detail';
+import UserComment from './components/CommentPage';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<List />} />
         <Route path='/detail' element={<Detail />} />
+        <Route path='/comment' element={<UserComment id="1"/>} />
       </Routes>
     </div>
   );

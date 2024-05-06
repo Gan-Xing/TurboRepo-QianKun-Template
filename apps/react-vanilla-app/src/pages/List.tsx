@@ -1,18 +1,60 @@
 import React from 'react';
+import './Path.css'; // 样式文件的引用方式也做相应调整
 
-const TaobaoLogin = () => {
+// 假设类型定义如下
+type MilestoneData = {
+  id: number;
+  label: string;
+  slug: string;
+  [key: string]: any; // 允许任意类型的额外键值对
+};
+
+type MilestoneProps = {
+  label: string;
+  slug: string;
+} & React.HTMLAttributes<HTMLDivElement>; // 扩展标准的 HTML div 属性
+
+const milestones: MilestoneData[] = [
+  { id: 1, label: 'Comment', slug: 'comment' },
+  { id: 2, label: 'Editor', slug: 'editor' },
+  { id: 3, label: 'Ajax', slug: 'ajax' },
+  { id: 4, label: 'ES6', slug: 'es6' },
+  { id: 5, label: 'HomeBrew', slug: 'homebrew' },
+  { id: 6, label: 'NPM', slug: 'npm' },
+  { id: 7, label: 'Gulp', slug: 'gulp' },
+  { id: 8, label: 'Git', slug: 'git' },
+  { id: 9, label: 'React', slug: 'react' },
+  { id: 10, label: '物流项目', slug: 'logimate' }
+];
+
+const Milestone: React.FC<MilestoneProps> = ({ label, slug }) => {
   return (
-    <div style={{ width: '300px', margin: '100px auto', textAlign: 'center' }}>
-      <h2>淘宝登录</h2>
-      <div>
-        <input type="text" placeholder="用户名" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+    <a className="milestone" href={`/${slug}`}>
+      <div className="milestoneInner">
+        <div className="milestoneFront">
+          <h2 className="label">{label}</h2>
+        </div>
+        <div className="milestoneBack">
+          <h2 className="label">More Info</h2>
+          这是更多的内容
+        </div>
       </div>
-      <div>
-        <input type="password" placeholder="密码" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-      </div>
-      <button style={{ padding: '10px 20px', cursor: 'pointer' }}>登录</button>
+    </a>
+  );
+};
+
+const Path = () => {
+  return (
+    <div className="pathContainer">
+      {milestones.map((milestone, index) => (
+        <Milestone
+          key={milestone.id}
+          label={milestone.label}
+          slug={milestone.slug}
+        />
+      ))}
     </div>
   );
 };
 
-export default TaobaoLogin;
+export default Path;
